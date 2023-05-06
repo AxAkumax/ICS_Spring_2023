@@ -93,6 +93,8 @@ public:
     ~LinkedStack();
 };
 
+ostream & operator << (ostream & out, Queue & L);
+
 class ArrayQueue
     : public Queue
 {

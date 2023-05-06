@@ -1,4 +1,4 @@
-#include "is_balanced.h"
+#include "is_balanced.cpp"
 
 int main()
 {
