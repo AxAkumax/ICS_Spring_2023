@@ -22,6 +22,9 @@ struct Stats {
 
     Stats(string name, const vector<int> & chain_lengths);
 
+    double compute_mean(const std::vector<int> &v);
+    double compute_stddev(const std::vector<int> &v);
+
     void print_histogram(ostream & out)
     {
         for (auto &e : histogram)

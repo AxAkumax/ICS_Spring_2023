@@ -2,6 +2,7 @@
 #define HASHER_H
 #include <iostream>
 #include <limits>
+#include <string>
 
 using namespace std;
 
@@ -239,6 +240,26 @@ struct ChatGPTHasher
             hash_val = (hash_val * 31 + (size_t)c) % N;
         }
         return hash_val;
+    }
+};
+struct MyHasher
+    : public Hasher
+{
+    MyHasher()
+        : Hasher("MyHasher")
+    {
+    }
+
+    size_t hash(string key, int N) const
+    {
+        size_t p = 31;
+        size_t hash_value = 0;
+        size_t p_pow = 1;
+        for (char c : key) {
+            hash_value = (hash_value + (c - 'a' + 1) * p_pow) % N;
+            p_pow = (p_pow * p) % N;
+        }
+        return hash_value;
     }
 };
 #endif

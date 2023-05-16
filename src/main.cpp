@@ -1,6 +1,6 @@
-#include "hashtable.h"
+#include "hashtable.cpp"
 
 int main()
 {
-    measure_hashtables("src/random.txt");
+    measure_hashtables("random.txt");
 }
