@@ -2,8 +2,8 @@
 
 int main()
 {
-    measure_BSTs("src/shortrandom.txt");
-    // measure_BSTs("src/random.txt");
-    measure_BSTs("src/shortsorted.txt");
-    // measure_BSTs("src/sorted.txt");
+   // measure_BSTs("shortrandom.txt");
+    measure_BSTs("random.txt");
+    //measure_BSTs("shortsorted.txt");
+    measure_BSTs("sorted.txt");
 }

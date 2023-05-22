@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-// constexpr int NWORDS = 45;
+//constexpr int NWORDS = 45;
 constexpr int NWORDS = 45392;
 
 struct Node
@@ -50,7 +50,7 @@ struct BST
         // post_order_print(out, root);
     }
 
-    virtual ~BST(); // must delete any Nodes in the tree pointed to by root
+    virtual ~BST() {} // must delete any Nodes in the tree pointed to by root
     BST(const BST & L) = delete;
     BST& operator =(const BST & L) = delete;
 };

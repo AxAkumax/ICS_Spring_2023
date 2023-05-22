@@ -10,6 +10,7 @@ class BSTree
     static Node * find_node(Node * t, string key);
     static Node * left_most(Node * t);
     static Node * delete_node(Node * t, string key);
+    static void delete_tree(Node * t);
     static int compute_height(Node * t);
 public:
     BSTree();
@@ -18,6 +19,7 @@ public:
     void remove(const string & key);
     bool is_empty() const;
     int get_height() const;
+    ~BSTree();
 };
 
 #endif
