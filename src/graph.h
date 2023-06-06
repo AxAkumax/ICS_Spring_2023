@@ -40,7 +40,6 @@ struct Edge {
     {
         return in >> e.u >> e.v >> e.weight;
     }
-
     inline friend ostream& operator <<(ostream& out, const Edge & e)
     {
        return out << "(" << e.u << ","  << e.v << ","  << e.weight << ")" ;
@@ -57,6 +56,10 @@ struct Graph : public EdgeList
     // returns a copy of graph with edges sorted ascending by edge weight
     Graph sort_edges() const;
     VertexList edges_from(Vertex vertex) const;
+    static bool compare_e(const Edge& a, const Edge& b)
+    {
+        return a.weight < b.weight;
+    }
     inline friend istream& operator >>(istream& in, Graph & G)
     {
         if (!(in >> G.numVertices))
