@@ -7,6 +7,14 @@
 
 using namespace std;
 
+class Compare {
+public:
+    bool operator()(pair<int, int> left, pair<int, int> right)
+    {
+        return left.second > right.second;
+    }
+};
+ 
 constexpr int INF = numeric_limits<int>::max();
 
 struct Edge {
@@ -38,15 +46,8 @@ inline istream& operator>>(istream& in, Graph& G) {
     return in;
 }
 
-inline void file_to_graph(const string& filename, Graph& G) {
-    ifstream in(filename);
-    if (!in) {
-        throw runtime_error("Can't open input file");
-    }
-    in >> G;
-    in.close();
-}
-
 vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& previous);
 vector<int> extract_shortest_path(const vector<int>& /*distances*/, const vector<int>& previous, int destination);
+void file_to_graph(string filename, Graph & G);
+string get_arg(int argc, char *argv[], string def);
 void print_path(const vector<int>& v, int total);
